@@ -1,112 +1,58 @@
 const fetch = require('node-fetch');
+const MongoClient = require('mongodb').MongoClient
+require('dotenv').config()
+const uri = process.env.MONGO_URI
 const requestOptions = {
     method: "GET",
     redirect: "follow"
 };
 
 
-function getLaunches(req, res) {
-    fetch(`https://api.spacexdata.com/v3/launches`)
-        .then(res => res.json())
-        .then(body => {
-            res.render('./pages/overview', {
-                title: 'Launches',
-                launches: body
-            });
-        })
+async function getGame(id) { 
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    try {
+        await client.connect()
+        console.log(process.env.MONGO_URI)
+        const db = client.db('polls')
+        const gameId = id;
+        const sample = await db.collection('games').findOne({gameId: gameId})
+        console.log(sample)
+    } catch(e) { 
+        console.error(e)
+    } finally {
+        await client.close()
+    }
 }
 
-function getSingleLaunch(req, res) {
-    fetch(`https://api.spacexdata.com/v3/launches/${req.params.id}`)
-        .then(res => res.json())
-        .then(body => {
-            res.render('./pages/singles/launch', {
-                title: "",
-                launch: body
-            });
-        })
+function getJoinId(req, res) {
+   const id = req.params.id
+   getGame(id)
 }
 
-function getShips(req, res) {
-    fetch(`https://api.spacexdata.com/v3/ships`)
-        .then(res => res.json())
-        .then(body => {
-            res.render('./pages/ships', {
-                title: 'Ships',
-                launches: body
-            });
-        })
+function getOverview(req, res) {
+    res.render('./pages/overview', {
+
+    })
+ }
+ function getJoin(req, res) {
+    res.render('./pages/join', {
+
+    })
+ }
+ function getBegin(req, res) {
+    res.render('./pages/begin', {
+
+    })
+ }
+
+function postStelling(req, res){
+req.body
 }
-
-function getSingleShip(req, res) {
-    fetch(`https://api.spacexdata.com/v3/ships/${req.params.id}`)
-        .then(res => res.json())
-        .then(body => {
-            res.render('./pages/singles/launch', {
-                title: "",
-                launch: body
-            });
-        })
-}
-
-function getCapsules(req, res) {
-    fetch(`https://api.spacexdata.com/v3/capsules`)
-        .then(res => res.json())
-        .then(body => {
-            res.render('./pages/capsules', {
-                title: 'Capsules',
-                launches: body
-            });
-        })
-}
-
-function getSingleCapsule(req, res) {
-    fetch(`https://api.spacexdata.com/v3/capsules/${req.params.id}`)
-        .then(res => res.json())
-        .then(body => {
-            res.render('./pages/singles/launch', {
-                title: "",
-                launch: body
-            });
-        })
-}
-
-function getRockets(req, res) {
-    fetch(`https://api.spacexdata.com/v3/rockets`)
-        .then(res => res.json())
-        .then(body => {
-            res.render('./pages/rocket', {
-                title: 'Rockets',
-                launches: body
-            });
-        })
-}
-
-function getSingleRocket(req, res) {
-    fetch(`https://api.spacexdata.com/v3/rockets/${req.params.id}`)
-        .then(res => res.json())
-        .then(body => {
-            res.render('./pages/singles/launch', {
-                title: "",
-                launch: body
-            });
-        })
-}
-
-function getOffline(req, res) {
-    res.render('./pages/offline', {});
-}
-
-
 
 module.exports = {
-    getLaunches,
-    getShips,
-    getCapsules,
-    getRockets,
-    getSingleLaunch,
-    getSingleCapsule,
-    getSingleRocket,
-    getSingleShip,
-    getOffline
+    getOverview,
+    getJoinId,
+    getJoin,
+    getBegin,
+    postStelling
 }

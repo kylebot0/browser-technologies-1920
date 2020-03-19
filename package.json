@@ -5,7 +5,6 @@
     "main": "index.js",
     "scripts": {
         "dev": "nodemon src/index.js",
-
         "build": "npm run build:minify",
         "build:manifest": "ncp public/manifest.json public",
         "build:minify": "TMP=/app/.tmp webpack && npm run build:start",
@@ -14,11 +13,14 @@
     "author": "Kyle Bot",
     "license": "MIC",
     "dependencies": {
+        "body-parser": "^1.19.0",
         "chalk": "^3.0.0",
         "dotenv": "^8.2.0",
         "ejs": "^2.6.1",
         "ejs-lint": "^1.0.1",
         "express": "^4.16.4",
+        "express-session": "^1.17.0",
+        "mongodb": "^3.5.5",
         "node-fetch": "^2.6.0",
         "pug": "^2.0.4",
         "request": "^2.88.0",
