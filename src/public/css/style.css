@@ -1,0 +1,68 @@
+h1,
+h2,
+h3 {
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#370F41, #72D0E9);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    margin: 2em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+header a {
+    text-decoration: none;
+}
+
+fieldset {
+    border: none;
+    height: 70vh;
+}
+
+fieldset button {
+    -webkit-box-shadow: 6px 6px 5px 0px rgba(97, 97, 97, 1);
+    -moz-box-shadow: 6px 6px 5px 0px rgba(97, 97, 97, 1);
+    box-shadow: 6px 6px 5px 0px rgba(97, 97, 97, 1);
+    background-color: #E6E6E6;
+    border-radius: 30px;
+    height: 60%;
+    width: 22%;
+}
+
+fieldset button:hover {
+    cursor: pointer;
+    transition: all 300ms;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(97, 97, 97, 1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(97, 97, 97, 1);
+    box-shadow: 10px 10px 5px 0px rgba(97, 97, 97, 1);
+}
+
+fieldset button:first-of-type {
+    margin-top: auto;
+    margin-left: 19%;
+    margin-right: 8%;
+}
+
+fieldset button:last-of-type {
+    margin-right: 19%;
+    margin-left: 8%;
+}
+
+fieldset button {
+    font-size: 2em;
+}

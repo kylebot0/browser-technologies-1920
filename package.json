@@ -1,0 +1,28 @@
+{
+    "name": "progressive-web-app",
+    "version": "1.0.0",
+    "description": "progressive-web-app",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon src/index.js",
+
+        "build": "npm run build:minify",
+        "build:manifest": "ncp public/manifest.json public",
+        "build:minify": "TMP=/app/.tmp webpack && npm run build:start",
+        "build:start": "node src/index.js"
+    },
+    "author": "Kyle Bot",
+    "license": "MIC",
+    "dependencies": {
+        "chalk": "^3.0.0",
+        "dotenv": "^8.2.0",
+        "ejs": "^2.6.1",
+        "ejs-lint": "^1.0.1",
+        "express": "^4.16.4",
+        "node-fetch": "^2.6.0",
+        "pug": "^2.0.4",
+        "request": "^2.88.0",
+        "shrink-ray-current": "^4.1.2",
+        "webpack": "^4.42.0"
+    }
+}
