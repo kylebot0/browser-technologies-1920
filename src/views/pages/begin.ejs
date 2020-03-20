@@ -1,9 +1,9 @@
 <%- include ../layouts/_toppage.ejs %>
-<form class="begin-form">
+<form class="begin-form" method="POST" action="/creategame">
     <fieldset>
         <label for="stelling">Wat is de stelling?</label>
-        <input id="stelling" type="text"></input>
-        <button class="begin-btn">Start</button>
+        <input id="stelling" type="text" name="stelling"></input>
+        <button type="submit" class="begin-btn">Start</button>
     </fieldset>
 </form>
 <%- include ../layouts/_bottompage.ejs %>

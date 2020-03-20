@@ -10,14 +10,19 @@ getBegin
 } = require('../controllers/routesController')
 
 const post = {
-    postStelling
+    postStelling,
+    postresult,
+    postEens,
+    postOneens
 } = require('../controllers/routesController')
 
 router.get('/', get.getOverview)
 .get('/begin', get.getBegin)
 .get('/join', get.getJoin)
 .get('/join/:id', get.getJoinId)
-.post('/creategame', urlencodedParser, post.postStelling);
+.post('/creategame', urlencodedParser, post.postStelling)
+.post('/eens', urlencodedParser, post.postEens)
+.post('/oneens', urlencodedParser, post.postOneens);
 
 
 // Make sure to export the router so it becomes available on imports
