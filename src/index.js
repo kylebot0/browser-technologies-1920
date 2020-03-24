@@ -4,6 +4,8 @@ require('dotenv').config()
 const routing = require('./routes/routes')
 const MongoClient = require('mongodb').MongoClient
 const uri = process.env.MONGO_URI
+const socket_io = require('socket.io');
+const io = socket_io();
 
 const bodyParser = require('body-parser')
 
@@ -17,7 +19,7 @@ app.set('view engine', 'ejs')
     .set('views', 'src/views')
     .use(express.static('src/public'))
     .use(session({
-        resave:false,
+        resave: false,
         saveUninitialized: true,
         secret: process.env.SECRET
     }))
