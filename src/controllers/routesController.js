@@ -72,7 +72,7 @@ async function postStelling(req, res){
 async function postEens(req, res){
     const id = req.session.gameId
     try {
-        await client.connect()
+        // await client.connect()
         const db = client.db('polls')
         const o_id = new ObjectId(id);
         const sample = await db.collection('games').findOne({_id: o_id})
@@ -91,7 +91,7 @@ async function postEens(req, res){
 async function postOneens(req, res){
     const id = req.session.gameId
     try {
-        await client.connect()
+        // await client.connect()
         const db = client.db('polls')
         const o_id = new ObjectId(id);
         const sample = await db.collection('games').findOne({_id: o_id})
