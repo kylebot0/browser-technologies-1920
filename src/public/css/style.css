@@ -214,3 +214,12 @@ form fieldset .begin-btn {
     color: #8557A7;
     margin-top: 10px;
 }
+
+.no-js {
+    display: none;
+}
+
+.result-title {
+    margin-left: 2em;
+    text-align: left !important;
+}

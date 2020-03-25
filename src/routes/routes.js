@@ -14,7 +14,8 @@ const post = {
     postStelling,
     postresult,
     postEens,
-    postOneens
+    postOneens,
+    postJoin
 } = require('../controllers/routesController')
 
 router.get('/', get.getOverview)
@@ -23,6 +24,7 @@ router.get('/', get.getOverview)
     .get('/join/:id', get.getJoinId)
     .get('/result/:id', get.getResult)
     .post('/creategame', urlencodedParser, post.postStelling)
+    .post('/joingame', urlencodedParser, post.postJoin)
     .post('/eens', urlencodedParser, post.postEens)
     .post('/oneens', urlencodedParser, post.postOneens);
 

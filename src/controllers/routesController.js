@@ -13,6 +13,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 async function getJoinId(req, res) {
     const id = req.params.id
+    console.log(id)
     let stelling = ''
     try {
         console.log(client.s.state)
@@ -52,7 +53,9 @@ function getBegin(req, res) {
 }
 
 async function getResult(req, res) {
+    
     const id = req.params.id
+    console.log(id)
     let result = {}
     try {
         await client.connect()
@@ -131,7 +134,10 @@ async function postOneens(req, res) {
         res.redirect(`./result/${req.session.gameId}`)
     }
 }
-
+function postJoin(req, res) {
+    const id = req.body.gameId
+    res.redirect(`./join/${id}`)
+}
 module.exports = {
     getOverview,
     getJoinId,
@@ -140,5 +146,6 @@ module.exports = {
     getResult,
     postStelling,
     postEens,
-    postOneens
+    postOneens,
+    postJoin
 }
