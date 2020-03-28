@@ -327,6 +327,13 @@ margin: 0 !important;
     animation: fade-in 600ms ease-out;
     opacity: 1;
 }
+
+.no-js-container {
+    opacity: 1;
+}
+.no-js-body {
+    background: linear-gradient(#A573AB, #2A4D61);
+}
 @keyframes fade {
     0%{
         transform: translateY(0px);
