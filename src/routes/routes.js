@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const router = express.Router();
+const { check, validationResult } = require('express-validator');
 const get = {
     getOverview,
     getJoinId,
@@ -23,8 +24,8 @@ router.get('/', get.getOverview)
     .get('/join', get.getJoin)
     .get('/join/:id', get.getJoinId)
     .get('/result/:id', get.getResult)
-    .post('/creategame', urlencodedParser, post.postStelling)
-    .post('/joingame', urlencodedParser, post.postJoin)
+        .post('/creategame', [check('stelling').isLength({min: 3})],urlencodedParser, post.postStelling)
+    .post('/joingame', [check('gameId').isLength({min: 3})],urlencodedParser, post.postJoin)
     .post('/eens', urlencodedParser, post.postEens)
     .post('/oneens', urlencodedParser, post.postOneens);
 

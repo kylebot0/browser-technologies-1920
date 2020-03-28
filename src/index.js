@@ -4,13 +4,11 @@ require('dotenv').config()
 const routing = require('./routes/routes')
 const MongoClient = require('mongodb').MongoClient
 const uri = process.env.MONGO_URI
-const socket_io = require('socket.io');
-const io = socket_io();
 
 const bodyParser = require('body-parser')
 
 const config = {
-    port: 8080
+    port: 9090
 }
 const app = express();
 

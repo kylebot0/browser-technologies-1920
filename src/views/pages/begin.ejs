@@ -2,8 +2,12 @@
 <form class="begin-form" method="POST" action="/creategame">
     <fieldset>
         <label for="stelling">Wat is de stelling?</label>
-        <input id="stelling" type="text" name="stelling"></input>
-        <button type="submit" class="begin-btn">Start</button>
+        <input id="stelling" type="text" name="stelling" ></input>
+        <p class="error"> <%-error%></p>
+        <div class="button">
+            <div class="translate"></div>
+            <button type="submit" class="begin-btn">START</button>
+          </div>
     </fieldset>
 </form>
 <%- include ../layouts/_bottompage.ejs %>

@@ -1,7 +1,18 @@
 <%- include ../layouts/_toppage.ejs %>
-    <a href="<%- gameUrl%>">
-        <h2>
-            <%-gameUrl%>
-        </h2>
-    </a>
-    <%- include ../layouts/_bottompage.ejs %>
+<section class="creategame-container">
+    <article>
+        <h2>Poll URL:</h2>
+        <a class="no-margin" href="<%- gameUrl%>">
+            <p>
+                <%-gameUrl%>
+            </p>
+        </a></article>
+        <article>
+            <h2>Poll code:</h2>
+            <p>
+                <%-poll%>
+            </p>
+        </article>
+</section>
+
+<%- include ../layouts/_bottompage.ejs %>

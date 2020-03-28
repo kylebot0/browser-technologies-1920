@@ -1,35 +1,63 @@
-const bars = document.querySelectorAll('.result-bar')
-const js = document.querySelectorAll('.no-js')
-const totalValue = (parseInt(bars[0].getAttribute('data-value')) + parseInt(bars[1].getAttribute('data-value')))
+// const form = document.querySelector('form')
+// const buttons = document.querySelectorAll('a')
+// const body = document.querySelector('body')
+// const header = document.querySelector('main')
+// const main = document.querySelector('main')
 
-function calcWidth(val, totalVal) {
-    return (val / totalVal) * 100
-}
-const bar1w = calcWidth(bars[0].getAttribute('data-value'), totalValue)
-const bar2w = calcWidth(bars[1].getAttribute('data-value'), totalValue)
-const titles = document.querySelectorAll('.result-title')
-titles.forEach(item =>{
-    item.remove()
-})
+// fade()
+// function fade(){
+//     main.classList.add('fadeIn')
+// }
+// setTimeout(()=> {
+//     body.classList.add('bc')
 
-js.forEach(item =>{
-    item.classList.remove('no-js')
-})
-bars.forEach(item => {
+// }, 200)
+// setTimeout(()=>{
+//     main.classList.remove('fadeIn')
+//     main.classList.add('show')
     
-    item.addEventListener("mouseover", function(e) {
-        let tooltip = document.querySelector(".tooltip")
-        let h2 = document.querySelector(".tooltip h2")
-        h2.textContent = item.getAttribute('data-value')
-        tooltip.classList.add("show")
-        tooltip.style.top = (e.clientY - 60 + "px")
-        tooltip.style.left = (e.clientX - 75 + "px")
-    })
-    item.addEventListener("mouseout", function(e) {
-        let tooltip = document.querySelector(".tooltip")
-        tooltip.classList.remove("show")
-    })
-})
+// }, 600)
 
-bars[0].setAttribute("style", `width:${bar1w}%`)
-bars[1].setAttribute("style", `width:${bar2w}%`)
+// if (form) {
+//     form.addEventListener('submit', animatePage)
+// } 
+// if(buttons){
+//     buttons.forEach(item => {
+//         item.addEventListener('click', function(e) {
+//             animateButton(e, item)
+//         })    
+//     })
+        
+// }
+
+
+// function animatePage(e) {
+//     console.log(e)
+//     e.preventDefault()
+//     header.classList.add('fadeOut')
+//     main.classList.add('fadeOut')
+//     body.classList.remove('bc')
+//     function goToNextPage() {
+//         form.submit()
+//     }
+//     window.setTimeout(goToNextPage, 1000)
+// }
+
+
+// function fadeIn() {
+
+// }
+
+// function animateButton(e, button) {
+//     console.log(e)
+//     e.preventDefault()
+//     header.classList.add('fadeOut')
+//     main.classList.add('fadeOut')
+//     body.classList.remove('bc')
+
+//     function goToNextPage() {
+//         window.location.href = button.href
+//     }
+//     window.setTimeout(goToNextPage, 1000)
+
+// }

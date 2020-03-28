@@ -1,9 +1,13 @@
 <%- include ../layouts/_toppage.ejs %>
 <form class="begin-form" method="POST" action="/joingame">
     <fieldset>
-        <label for="gameId">Wat is het gameId?</label>
+        <label for="gameId">Wat is de poll code?</label>
         <input id="gameId" type="text" name="gameId"></input>
-        <button type="submit" class="begin-btn">Zoek</button>
+        <p class="error"> <%-error%></p>
+        <div class="button">
+            <div class="translate"></div>
+            <button type="submit" class="begin-btn">ZOEK</button>
+          </div>
     </fieldset>
 </form>
     <%- include ../layouts/_bottompage.ejs %>

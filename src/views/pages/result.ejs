@@ -9,6 +9,7 @@
                 <%-stelling%>
             </h1>
         </a>
+        <p class="result-header">RESULTAAT</p>
     </header>
     <main>
         <section class="result-container">
@@ -24,7 +25,7 @@
             <article>
                 <h2>Totaal oneens:</h2>
                 <h2 class="result-title"><%=oneens%></h2>
-                <div class="no-js">
+                                <div class="no-js">
                     
                     <div class="result-bar no-js" data-value="<%-oneens%>">
                     </div>
@@ -34,4 +35,5 @@
         <div class="tooltip">
             <h2></h2>
         </div>
+        <script src="/js/bars.js"> </script>
         <%- include ../layouts/_bottompage.ejs %>
