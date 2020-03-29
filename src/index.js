@@ -7,9 +7,7 @@ const uri = process.env.MONGO_URI
 
 const bodyParser = require('body-parser')
 
-const config = {
-    port: 9090
-}
+const PORT = process.env.PORT || 9090
 const app = express();
 
 
@@ -25,5 +23,5 @@ app.set('view engine', 'ejs')
     .use(routing);
 
 app.listen(config.port, function() {
-    console.log(`Application started on port: ${config.port}`);
+    console.log(`Application started on port: ${PORT}`);
 });
