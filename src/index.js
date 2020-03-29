@@ -22,6 +22,6 @@ app.set('view engine', 'ejs')
     .use(bodyParser.urlencoded({ extended: false }))
     .use(routing);
 
-app.listen(config.port, function() {
+app.listen(PORT, function() {
     console.log(`Application started on port: ${PORT}`);
 });
