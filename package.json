@@ -4,11 +4,8 @@
     "description": "progressive-web-app",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon src/index.js",
-        "build": "npm run build:minify",
-        "build:manifest": "ncp public/manifest.json public",
-        "build:minify": "TMP=/app/.tmp webpack && npm run build:start",
-        "build:start": "node src/index.js"
+        "start": "node src/index.js",
+        "dev": "nodemon src/index.js"
     },
     "author": "Kyle Bot",
     "license": "MIC",
