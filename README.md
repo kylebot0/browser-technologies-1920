@@ -78,7 +78,7 @@ npm run start
 ```
 
 
-## Workflow
+## Wireflow
   ### Sketch
 > Ik wil tijdens een college aan studenten een poll kunnen voorleggen met over-de-streep stellingen en de resultaten meteen laten zien.
 I started by making a design that i wanted to recreate and that i liked. This was the result of that.
@@ -97,6 +97,14 @@ At last i made the most pleasurable layer, which contains everything.
 ## Layers 
   ### Layer 1 (HTML)
   > This is the layer that only contains HTML
+<details markdown="1">
+   <summary>Code</summary>
+<p>
+ ```
+ Code
+ ```
+ </p>
+</details>
   It might not look pretty but this is what some users are gonna be able to see. The users are still gonna be able to do the core functionalities, like send the form info and get the results. 
   ![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/functional.png)
   
@@ -110,9 +118,29 @@ At last i made the most pleasurable layer, which contains everything.
   The user has a way better user experience and has access to graphs on the result page. Next to that there are also fluid page transitions. This way the user has a feeling that the page doesn't just load but switches from content.
   ![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/pleasurable.png)
   
-<img alt="Afb 1" src="https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/11a2c81757954f4f7583ba2bed4bd8dd%20(1).gif">
+![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/11a2c81757954f4f7583ba2bed4bd8dd%20(1).gif)
   
 ## Conclusion
+### Student kan de core functionaliteit van een use case doorgronden
+- I think i perfectly executed the core functionality of the use case, because all that was required is making your own statements and then being able to view those statements. Which worked out pretty good.
+
+### Toegankelijkheid: De user experience is goed
+- The user experience is pretty good, the only thing i wanted to add was an answers button where you can just enter the code and get your answers. But besides that, i tried to use progressive disclosure by doing everything step by step so nothing goes wrong. I also added some error validation in case someone enters the wrong code or doesnt enter anything at all.
+
+### Readme: In de beschrijving van het project staat een probleemdefinitie, hoe het probleem is opgelost en een uitleg van de code.
+- I described everything in my readme, including some snippets of code. I didn't want to add too much code, because that's not what a readme is for and everyone is capable to look at the code themselves. Only thing that could've been described better is the definition of the problem.
+
+### Student kan uitleggen wat Progressive enhancement is. 
+- For me progressive enchancement is making everything accessible for everyone, from screenreaders, to people that don't have JS enabled. 
+
+### Student laat zien hoe Progressive Enhancement toe te passen in Web Development
+- Most of the progressive enchancement is described in [Layers](#layers)
+
+### Student kan uitleggen wat Feature detection is.
+- My idea behind feature detection is that you can use the css or js to determine whether a feature is supported in the current browser. Then if it isn't supported, a fallback kicks in. This way browsers that don't support certain features in the css, then it will just use the code previously mentioned. However if it does, the cascading of CSS kicks in and overwrites the values mentioned in earlier code.  
+
+### Student laat zien hoe Feature Detection kan worden toegepast in Web Development
+- For more feature detection check [Feature detection](#feature-detection)
 
 ## Keep up to date
 Make sure you pull the repository once in a while since we are still working on this project, you can do this by using ```git pull```
@@ -124,12 +152,11 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## Sources 📚
 Sources i used throughout the project.
 
-* https://docs.spacexdata.com/?version=latest
-* https://dev.to/kodnificent/how-to-build-a-router-with-vanilla-javascript-2a18
+* None
 
 ### Credits
 
-  * None
+  * Koop, for coming up with great ideas!
 
 ## Licence 🔓
 MIT © [Kyle Bot](https://github.com/kylebot0)
