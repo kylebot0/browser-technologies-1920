@@ -79,42 +79,131 @@ npm run start
 
 
 ## Wireflow
+<details markdown="1">
+   <summary>Show wireflow</summary>
+   
   ### Sketch
 > Ik wil tijdens een college aan studenten een poll kunnen voorleggen met over-de-streep stellingen en de resultaten meteen laten zien.
 I started by making a design that i wanted to recreate and that i liked. This was the result of that.
+
 ---
+
 I started by making the core functionality, which is creating a poll and then being able to vote on it and see the results. This layer includes no JS.
 
 <img width="500" alt="Afb 1" src="https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/Wireflow-BT-Laag-3.png">
+
 ---
+
 Then i wanted to make a design with some simple progressive enhancement and JS.
+
 <img width="500" alt="Afb 1" src="https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/Wireflow-BT-Laag-2.png">
+
 ---
 At last i made the most pleasurable layer, which contains everything.
+
 <img  width="500" alt="Afb 1" src="https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/Wireflow-BT-Laag-1.png">
+
 ---
+
+</details>
 
 ## Layers 
   ### Layer 1 (HTML)
   > This is the layer that only contains HTML
 <details markdown="1">
    <summary>Code</summary>
-<p>
+   
+## Semantic HTML
+I made sure i use semantic HTML, this way the user can still see what's what eventhough there is no styling. you can do this by actually using forms / fieldsets
+ ```html
+<form class="begin-form" method="POST" action="/joingame">
+    <fieldset>
+        <label for="gameId">Wat is de poll code?</label>
+        <input id="gameId" type="text" name="gameId"></input>
+        <p class="error"> <%-error%></p>
+        <div class="button ms">
+            <div class="translate"></div>
+            <button type="submit" class="begin-btn">ZOEK</button>
+          </div>
+    </fieldset>
+</form>
  ```
- Code
- ```
- </p>
+
 </details>
+
   It might not look pretty but this is what some users are gonna be able to see. The users are still gonna be able to do the core functionalities, like send the form info and get the results. 
   ![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/functional.png)
   
  ### Layer 2 (HTML and CSS)
   > This is the layer that contains HTML and CSS
+  
+  <details markdown="1">
+   <summary>Code</summary>
+   
+## CSS Fallbacks
+If you want the user to be able to see everything correctly on the browsers, you should be using fallbacks. First you declare the most basic styling that everything supports. After that make sure to use the `@supports` property and the value you want to check if it supports the value. This way the cascading part of CSS kicks in and cascades the previously mentioned code. This is also part of feature detection
+ ```css
+.poll-form > div {
+    margin-top: 30vh;
+}
+@supports(display: flex) {
+    main {
+        margin-top: 10%;
+    }
+    .poll-form > div {
+        margin-top: 0;
+        height: 50vh;
+        display: flex;
+        -ms-display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section {
+        margin: 0;
+        height: 50vh;
+        display: flex;
+        -ms-display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+ ```
+
+</details>
+
   It's already starting to look like something, the user has access to the most basic of styling and can use it across all browsers. The user can't do anything different than the most basic layer.  
   ![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/laag_2.png)
   
  ### Layer 3 (HTML, CSS and JS)
   > This is the layer that contains everything
+  
+   <details markdown="1">
+   <summary>Code & Progressive Enchancement</summary>
+   
+## Progressive enhancement
+Besides being able to not see the CSS, sometimes users have their JS turned off or it can't load correctly. This way you'll have to use progressive enhancement. I used it in this page to animate page transitions and show a graph on the result page. To make sure users are still able to see everything normally if there isn't any JS, i give every HTML tag, the `class="no-js"` class. This way i declare normal variables in css and i can easily scan the page for attributes containing that tag. If there is a tag present i either remove it, or i give it a new class. This way people who have it turned off, can still use the page.
+ ```js
+const bars = document.querySelectorAll('.result-bar')
+const js = document.querySelectorAll('.no-js')
+const totalValue = (parseInt(bars[0].getAttribute('data-value')) + parseInt(bars[1].getAttribute('data-value')))
+
+function calcWidth(val, totalVal) {
+    return (val / totalVal) * 100
+}
+const bar1w = calcWidth(bars[0].getAttribute('data-value'), totalValue)
+const bar2w = calcWidth(bars[1].getAttribute('data-value'), totalValue)
+const titles = document.querySelectorAll('.result-title')
+titles.forEach(item =>{
+    item.remove()
+})
+
+js.forEach(item =>{
+    item.classList.remove('no-js')
+})
+ ```
+
+</details>
+
   The user has a way better user experience and has access to graphs on the result page. Next to that there are also fluid page transitions. This way the user has a feeling that the page doesn't just load but switches from content.
   ![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/pleasurable.png)
   
