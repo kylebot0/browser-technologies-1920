@@ -58,7 +58,7 @@ header {
 }
 
 main {
-    margin-top: 10%;
+    margin-top: 40%;
     opacity: 0;
 }
 
@@ -69,9 +69,19 @@ fieldset {
     border: none;
     height: 50vh;
 }
+section{
+    margin-top: 30vh;
+
+}
+.poll-form > div {
+    margin-top: 30vh;
+}
 @supports(display: flex) {
-    
+    main {
+        margin-top: 10%;
+    }
     .poll-form > div {
+        margin-top: 0;
         height: 50vh;
         display: flex;
         -ms-display: flex;
@@ -79,6 +89,7 @@ fieldset {
         align-items: center;
     }
     section {
+        margin: 0;
         height: 50vh;
         display: flex;
         -ms-display: flex;
@@ -90,11 +101,8 @@ fieldset {
 a {
     text-decoration: none;
 }
-
-  
 .button {
-    display: inline-flex;
-    -ms-display: inline-flex;
+    display: block;
     height: 140px;
     width: 500px;
     border: 2px solid #BFC0C0;
@@ -107,17 +115,52 @@ a {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     cursor: pointer;
+    text-align: center;
   }
+  .button:first-of-type {
+      left: 25%;
+  }
+  .button:last-of-type {
+    right: 25%;
+}
+.ms {
+    display: inline-flex; 
+    position: relative;
+    left: 0 !important;
+    right: 0 !important;
+}
+  @supports(display: flex){
+    .button {
+        display: inline-flex;
+        height: 140px;
+        width: 500px;
+        margin: 20px 20px 20px 20px;
+        position: relative;
+        left: 0 !important;
+        right: 0 !important;
+        transform: translateX(0);
+      }
+  }
+
   
   .button a {
     color: white;
     text-decoration: none;
     letter-spacing: 1px;
-    position: relative;
+    position: absolute;
+    left: 30%;
+    transform: translateY(50%);
     transition: all .45s ease-Out;
   }
+  @supports(display: flex){
+  .button a {
+position: relative;
+left: 0;
+transform: translateY(0);
+  }
+}
   form .button .translate {
     top: -50px;
   }
@@ -226,6 +269,8 @@ form fieldset .begin-btn {
 }
 .result-container article {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @supports(display: grid) {
     .result-container article {
