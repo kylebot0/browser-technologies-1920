@@ -22,13 +22,18 @@ setTimeout(()=>{
 
 if (form) {
     const formbuttons = document.querySelectorAll('.poll-btn')
+    console.log(formbuttons)
     formbuttons.forEach(item => {
         item.addEventListener('click', function(){
+            console.log('1')
             let attr = item.getAttribute('formaction')
             form.setAttribute('action', attr)
             form.addEventListener('submit', animatePage)
         })
     })
+    if(formbuttons.length == 0){
+        form.addEventListener('submit', animatePage)
+    }
 } 
 if(buttons){
     buttons.forEach(item => {
@@ -46,6 +51,7 @@ function animatePage(e) {
     main.classList.add('fadeOut')
     body.classList.remove('bc')
     function nextPage(){
+        console.log('2')
         form.submit()
     }
     window.setTimeout(nextPage, 1000)
