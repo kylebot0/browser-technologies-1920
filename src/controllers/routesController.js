@@ -23,6 +23,11 @@ async function getJoinId(req, res) {
         await client.connect()
         const db = client.db('polls')
         const sample = await db.collection('games').findOne({game: hash})
+        if(sample == null){
+            res.render('./pages/join', {
+                error: 'Incorrecte poll code, probeer opnieuw'
+            })
+        }
         console.log('result ' +sample)
         req.session.gameId = hash
         stelling = sample.stelling
@@ -62,6 +67,11 @@ async function getResult(req, res) {
         const db = client.db('polls')
         req.session.gameId = id
         result = await db.collection('games').findOne({ game: id })
+        if(result == null){
+            res.render('./pages/join', {
+                error: 'Incorrecte poll code, probeer opnieuw'
+            })
+        }
         console.log(result)
     } catch (e) {
         console.error(e)

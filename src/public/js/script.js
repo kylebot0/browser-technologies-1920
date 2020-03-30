@@ -34,15 +34,12 @@ if(buttons){
 
 
 function animatePage(e) {
-    console.log(e)
-    e.preventDefault()
+    console.log(document.activeElement.getAttribute("formaction"))
+    // e.preventDefault()
     header.classList.add('fadeOut')
     main.classList.add('fadeOut')
     body.classList.remove('bc')
-    function goToNextPage() {
-        form.submit()
-    }
-    window.setTimeout(goToNextPage, 1000)
+    window.setTimeout(1000)
 }
 
 
