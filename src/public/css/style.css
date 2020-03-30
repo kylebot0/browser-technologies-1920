@@ -51,6 +51,7 @@ body:before {
 header {
     margin: 2em;
     display: flex;
+    -ms-display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -73,12 +74,14 @@ fieldset {
     .poll-form > div {
         height: 50vh;
         display: flex;
+        -ms-display: flex;
         justify-content: center;
         align-items: center;
     }
     section {
         height: 50vh;
         display: flex;
+        -ms-display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -91,6 +94,7 @@ a {
   
 .button {
     display: inline-flex;
+    -ms-display: inline-flex;
     height: 140px;
     width: 500px;
     border: 2px solid #BFC0C0;
@@ -226,6 +230,7 @@ form fieldset .begin-btn {
 @supports(display: grid) {
     .result-container article {
         display: grid;
+        -ms-display: grid;
         width: 100%;
         grid-template-columns: 2fr 3fr;
         grid-template-rows: 1fr;
