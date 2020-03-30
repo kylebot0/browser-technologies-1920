@@ -21,7 +21,14 @@ setTimeout(()=>{
 }, 600)
 
 if (form) {
-    form.addEventListener('submit', animatePage)
+    const formbuttons = document.querySelectorAll('.poll-btn')
+    formbuttons.forEach(item => {
+        item.addEventListener('click', function(){
+            let attr = item.getAttribute('formaction')
+            form.setAttribute('action', attr)
+            form.addEventListener('submit', animatePage)
+        })
+    })
 } 
 if(buttons){
     buttons.forEach(item => {
@@ -34,12 +41,14 @@ if(buttons){
 
 
 function animatePage(e) {
-    console.log(document.activeElement.getAttribute("formaction"))
-    // e.preventDefault()
+    e.preventDefault()
     header.classList.add('fadeOut')
     main.classList.add('fadeOut')
     body.classList.remove('bc')
-    window.setTimeout(1000)
+    function nextPage(){
+        form.submit()
+    }
+    window.setTimeout(nextPage, 1000)
 }
 
 
@@ -54,9 +63,9 @@ function animateButton(e, button) {
     main.classList.add('fadeOut')
     body.classList.remove('bc')
 
-    function goToNextPage() {
+    function nextPage() {
         window.location.href = button.href
     }
-    window.setTimeout(goToNextPage, 1000)
+    window.setTimeout(nextPage, 1000)
 
 }
