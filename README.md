@@ -210,25 +210,25 @@ js.forEach(item =>{
 ![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/11a2c81757954f4f7583ba2bed4bd8dd%20(1).gif)
   
 ## Conclusion
-### Student kan de core functionaliteit van een use case doorgronden
+#### Student kan de core functionaliteit van een use case doorgronden
 - I think i perfectly executed the core functionality of the use case, because all that was required is making your own statements and then being able to view those statements. Which worked out pretty good.
 
-### Toegankelijkheid: De user experience is goed
+#### Toegankelijkheid: De user experience is goed
 - The user experience is pretty good, the only thing i wanted to add was an answers button where you can just enter the code and get your answers. But besides that, i tried to use progressive disclosure by doing everything step by step so nothing goes wrong. I also added some error validation in case someone enters the wrong code or doesnt enter anything at all.
 
-### Readme: In de beschrijving van het project staat een probleemdefinitie, hoe het probleem is opgelost en een uitleg van de code.
+#### Readme: In de beschrijving van het project staat een probleemdefinitie, hoe het probleem is opgelost en een uitleg van de code.
 - I described everything in my readme, including some snippets of code. I didn't want to add too much code, because that's not what a readme is for and everyone is capable to look at the code themselves. Only thing that could've been described better is the definition of the problem.
 
-### Student kan uitleggen wat Progressive enhancement is. 
+#### Student kan uitleggen wat Progressive enhancement is. 
 - For me progressive enchancement is making everything accessible for everyone, from screenreaders, to people that don't have JS enabled. 
 
-### Student laat zien hoe Progressive Enhancement toe te passen in Web Development
+#### Student laat zien hoe Progressive Enhancement toe te passen in Web Development
 - Most of the progressive enchancement is described in [Layers](#layers)
 
-### Student kan uitleggen wat Feature detection is.
+#### Student kan uitleggen wat Feature detection is.
 - My idea behind feature detection is that you can use the css or js to determine whether a feature is supported in the current browser. Then if it isn't supported, a fallback kicks in. This way browsers that don't support certain features in the css, then it will just use the code previously mentioned. However if it does, the cascading of CSS kicks in and overwrites the values mentioned in earlier code.  
 
-### Student laat zien hoe Feature Detection kan worden toegepast in Web Development
+#### Student laat zien hoe Feature Detection kan worden toegepast in Web Development
 - For more feature detection check [Feature detection](#feature-detection)
 
 ## Keep up to date
