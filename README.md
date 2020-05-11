@@ -4,20 +4,37 @@ A simple poll maker where you can make your own statements and make others disag
 
 <img alt="Afb 1" src="https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/11a2c81757954f4f7583ba2bed4bd8dd%20(1).gif">
 
-## Introduction
-I want a poll with a statement that i can think of myself and be able to see the results of it during a lecture.
+## Description 📝
+A simple poll maker where you can make your own statements and make others disagree or agree with your statements. You are able to see the answers students give with a result page. Next to that it's fit for mobile, desktop and almost every browser.
 
 ## Table of Contents 🗃
-- [SpaceX Display ⚙️](#spacex-display---)
+- [Poll maker](#poll-maker)
+  * [Description 📝](#description---)
   * [Table of Contents 🗃](#table-of-contents---)
   * [Live demo](#live-demo)
   * [To Do and features 📌](#to-do-and-features---)
-  * [Description 📝](#description---)
-  * [Actor diagram](#actor-diagram)
-  * [Interaction diagram](#interaction-diagram)
-  * [Installing 🔍](#installing---)
-    + [Packages and Technologies](#packages-and-technologies)
-  * [API 🐒](#api---)
+  * [Installation](#installation)
+  * [Wireflow](#wireflow)
+    + [Sketch](#sketch)
+  * [Feature Detection](#feature-detection)
+    + [A couple examples](#a-couple-examples)
+      - [Opera mini](#opera-mini)
+      - [Ipad](#ipad)
+  * [Layers](#layers)
+    + [Layer 1 (HTML)](#layer-1--html-)
+  * [Semantic HTML](#semantic-html)
+    + [Layer 2 (HTML and CSS)](#layer-2--html-and-css-)
+  * [CSS Fallbacks](#css-fallbacks)
+    + [Layer 3 (HTML, CSS and JS)](#layer-3--html--css-and-js-)
+  * [Progressive enhancement](#progressive-enhancement)
+  * [Conclusion](#conclusion)
+      - [Student kan de core functionaliteit van een use case doorgronden](#student-kan-de-core-functionaliteit-van-een-use-case-doorgronden)
+      - [Toegankelijkheid: De user experience is goed](#toegankelijkheid--de-user-experience-is-goed)
+      - [Readme: In de beschrijving van het project staat een probleemdefinitie, hoe het probleem is opgelost en een uitleg van de code.](#readme--in-de-beschrijving-van-het-project-staat-een-probleemdefinitie--hoe-het-probleem-is-opgelost-en-een-uitleg-van-de-code)
+      - [Student kan uitleggen wat Progressive enhancement is.](#student-kan-uitleggen-wat-progressive-enhancement-is)
+      - [Student laat zien hoe Progressive Enhancement toe te passen in Web Development](#student-laat-zien-hoe-progressive-enhancement-toe-te-passen-in-web-development)
+      - [Student kan uitleggen wat Feature detection is.](#student-kan-uitleggen-wat-feature-detection-is)
+      - [Student laat zien hoe Feature Detection kan worden toegepast in Web Development](#student-laat-zien-hoe-feature-detection-kan-worden-toegepast-in-web-development)
   * [Keep up to date](#keep-up-to-date)
   * [Contributing](#contributing)
   * [Sources 📚](#sources---)
@@ -45,8 +62,7 @@ Features:
 - [x] Fit for all browser( including oepra mini)
 - [x] CSS Fallbacks
 
-## Description 📝
-A simple poll maker where you can make your own statements and make others disagree or agree with your statements. You are able to see the answers students give with a result page. Next to that it's fit for mobile, desktop and almost every browser.
+
 
 ## Installation
 
@@ -106,6 +122,46 @@ At last i made the most pleasurable layer, which contains everything.
 ---
 
 </details>
+
+## Feature Detection
+> My idea behind feature detection is that you can use the css or js to determine whether a feature is supported in the current browser. Then if it isn't supported, a fallback kicks in. This way browsers that don't support certain features in the css, then it will just use the code previously mentioned. However if it does, the cascading of CSS kicks in and overwrites the values mentioned in earlier code.  
+
+If you want the user to be able to see everything correctly on the browsers, you should be using fallbacks. First you declare the most basic styling that everything supports. After that make sure to use the `@supports` property and the value you want to check if it supports the value. This way the cascading part of CSS kicks in and cascades the previously mentioned code. This is also part of feature detection
+ ```css
+.poll-form > div {
+    margin-top: 30vh;
+}
+@supports(display: flex) {
+    main {
+        margin-top: 10%;
+    }
+    .poll-form > div {
+        margin-top: 0;
+        height: 50vh;
+        display: flex;
+        -ms-display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section {
+        margin: 0;
+        height: 50vh;
+        display: flex;
+        -ms-display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+ ```
+ 
+### A couple examples
+#### Opera mini
+This is captured with a opera mini browser, on a mobile device. As you can see almost everything works great. The JS is of course by default disabled. The only thing i'm not that happy about is the input bar, as you can't see the statement you're writing.
+![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/opera_mini.gif)
+
+#### Ipad
+This is captured with the ipad, with a very old Chrome browser (V29 i believe). Thss one works especially well, even with the JS enabled. 
+![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/ipad.gif)
 
 ## Layers 
   ### Layer 1 (HTML)
