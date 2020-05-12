@@ -2,7 +2,7 @@
 
 A simple poll maker where you can make your own statements and make others disagree or agree with your statements.
 
-<img alt="Afb 1" src="https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/11a2c81757954f4f7583ba2bed4bd8dd%20(1).gif">
+<img alt="Afb 1" src="https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/6e8ae2e4f9eda9e89724620216906263.gif">
 
 ## Description 📝
 A simple poll maker where you can make your own statements and make others disagree or agree with your statements. You are able to see the answers students give with a result page. Next to that it's fit for mobile, desktop and almost every browser.
@@ -263,7 +263,7 @@ js.forEach(item =>{
   The user has a way better user experience and has access to graphs on the result page. Next to that there are also fluid page transitions. This way the user has a feeling that the page doesn't just load but switches from content.
   ![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/pleasurable.png)
   
-![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/11a2c81757954f4f7583ba2bed4bd8dd%20(1).gif)
+![](https://github.com/kylebot0/browser-technologies-1920/blob/master/gh-images/6e8ae2e4f9eda9e89724620216906263.gif)
   
 ## Conclusion
 #### Student kan de core functionaliteit van een use case doorgronden
