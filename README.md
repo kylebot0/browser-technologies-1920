@@ -153,6 +153,24 @@ If you want the user to be able to see everything correctly on the browsers, you
     }
 }
  ```
+
+#### Javascript feature detection
+To give make javascript work on all browser you need to be able to write the simplest code, for example you can use ES5. 
+Next to that you'll also have to check for if that item even exists, because some browser don't support localstorage or other things like forEach loops.
+```javascript
+function getItems() {
+    if (window.localStorage.length == 0) {
+        return window.localStorage.length
+    } else if (window.localStorage.polls.length >= 1) {
+        var parsed = JSON.parse(window.localStorage.getItem("polls"));
+        return parsed;
+    }
+}
+```
+```javascript
+if(window.localStorage) {
+}
+```
  
 ### A couple examples
 #### Opera mini
