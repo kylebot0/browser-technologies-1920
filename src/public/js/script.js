@@ -3,12 +3,24 @@ const buttons = document.querySelectorAll('a')
 const body = document.querySelector('body')
 const header = document.querySelector('main')
 const main = document.querySelector('main')
+const sparklecont = document.querySelector('.sparkleCont')
+const madePolls = document.querySelector(".pollsMade");
+const copyCont = document.querySelector("#pollCode ~ .button");
 
 fade()
 
 function fade() {
+    sparklecont.sparkle({
+        count: 50,
+    })
     body.classList.remove('no-js-body')
     main.classList.remove('no-js-container')
+    if(madePolls){
+        madePolls.classList.remove('no-js-container-polls')
+    }
+    if(copyCont){
+        copyCont.classList.remove('no-js-container-button')
+    }
     main.classList.add('fadeIn')
 }
 setTimeout(() => {
@@ -45,9 +57,9 @@ if (buttons) {
 
 }
 const pollCode = document.querySelector('#pollCode')
+
 if(window.localStorage) {
     let items = getItems()
-    let madePolls = document.querySelector(".pollsMade");
     let container = document.querySelector(".pollsMade > div");
     let header = document.querySelector(".pollsMade > div > h2")
     console.log(items)
@@ -57,20 +69,29 @@ if(window.localStorage) {
 
         }
     } else {
-        let markup = ``
+        if(madePolls){
+            let markup = ``
 
-      items.forEach((item) => {
-        markup = `
-        <div class="button">
-        <div class="translate"></div>
-        <a href="/result/${item}">${item}</a>
-      </div>`
-      container.insertAdjacentHTML("beforeend", markup);
-      })
+            items.forEach((item) => {
+              markup = `
+              <div class="button">
+              <div class="translate"></div>
+              <a href="/result/${item}">${item}</a>
+            </div>`
+            container.insertAdjacentHTML("beforeend", markup);
+            })
+        } else {
+
+        }
+       
     }
-}
+} 
 
 if(pollCode){
+let button = document.getElementById('copy')
+button.addEventListener('click', function(){
+    copy(button)
+})
 let code = pollCode.textContent
 code = code.replace(/(\r\n|\n|\r)/gm, "")
 code = Number(code)
@@ -106,6 +127,7 @@ function setItems(data) {
 
 function animatePage(e) {
     e.preventDefault()
+   sparklecont.classList.add('fade')
     header.classList.add('fadeOut')
     main.classList.add('fadeOut')
     body.classList.remove('bc')
@@ -118,13 +140,22 @@ function animatePage(e) {
 }
 
 
-function fadeIn() {
+function copy(){
+    let pollInput = document.getElementById('pollInput')
+    pollInput.type = 'text';
+    pollInput.select();
+    pollInput.setSelectionRange(0, 99999);
 
+  document.execCommand("copy");
+  pollInput.type = 'hidden';
+  alert("Copied the text: " + pollInput.value);
 }
 
 function animateButton(e, button) {
     console.log(e)
     e.preventDefault()
+    
+    sparklecont.classList.add('fade')
     header.classList.add('fadeOut')
     main.classList.add('fadeOut')
     body.classList.remove('bc')

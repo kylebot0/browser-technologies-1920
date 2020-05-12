@@ -64,6 +64,7 @@ main {
 
 header a {
     text-decoration: none;
+    z-index: 100;
 }
 fieldset {
     border: none;
@@ -366,7 +367,14 @@ form fieldset .begin-btn {
 .no-margin {
 margin: 0 !important;
 }
-
+.fade {
+    transition: all ease-out 400ms;
+    opacity: 0 !important;
+    
+}
+.no-js-container-polls {
+    display: none;
+}
 .fadeOut {
     transition: all ease-out 400ms;
     animation: fade 1000ms ease-out;
@@ -403,6 +411,21 @@ margin: 0 !important;
     height: 70px;
     width: 250px;
     font-size: 1.5em;
+}
+.sparkleCont {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+#pollCode ~ .button {
+    height: 40px;
+    width: 140px;
+    font-size: 1.5em;
+}
+.no-js-container-button {
+    display: none;
 }
 @keyframes fade {
     0%{
